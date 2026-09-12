@@ -106,6 +106,9 @@ other_unclear
 other_unclear is used when the message does not contain enough information to confidently assign a specific intent.
 
 Project Structure
+
+hiver-support-agent/
+```text
 hiver-support-agent/
 │
 ├── README.md

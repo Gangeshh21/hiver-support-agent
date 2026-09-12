@@ -162,7 +162,7 @@ hiver-support-agent/
         └── suggest_golden_labels.py
 Setup
 1. Clone the repository
-git clone <YOUR_REPOSITORY_URL>
+git clone https://github.com/Gangeshh21/hiver-support-agent.git
 cd hiver-support-agent
 2. Create a virtual environment
 

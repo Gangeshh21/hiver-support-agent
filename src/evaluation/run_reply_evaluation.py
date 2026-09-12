@@ -14,7 +14,17 @@ def main():
 
     df = pd.read_csv(INPUT_PATH)
     agent = SupportAgent()
-    results = []
+
+    # Resume from cases not already evaluated.
+    if os.path.exists(OUTPUT_PATH):
+        previous = pd.read_csv(OUTPUT_PATH)
+        completed_ids = set(previous["case_id"].astype(str))
+        df = df[~df["case_id"].astype(str).isin(completed_ids)]
+        results = previous.to_dict("records")
+        print(f"Already evaluated: {len(completed_ids)} cases.")
+        print(f"Remaining cases: {len(df)}")
+    else:
+        results = []
 
     for _, row in df.iterrows():
         print(f"\nEvaluating case {row['case_id']}...")

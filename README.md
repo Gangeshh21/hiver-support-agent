@@ -47,7 +47,7 @@ Architecture
                            |
                            v
                 +---------------------+
-                | Gemini 2.5 Flash    |
+                | Gemini 3.6 Flash    |
                 | Grounded Reply      |
                 | Generation          |
                 +---------------------+
@@ -329,7 +329,7 @@ The conservative policy is intentional: an uncertain automated answer is worse t
 
 Reply Generation
 
-Gemini 2.5 Flash is used to draft replies.
+Gemini 3.6 Flash is used to draft replies.
 
 The generation prompt provides:
 
@@ -428,7 +428,7 @@ The held-out test set contains only 31 examples.
 Several intents have very small evaluation support.
 A single stratified train/test split is currently used.
 LLM reply evaluation was limited by API quota.
-Human-vs-LLM judge agreement at 30–50 examples was not completed.
+Human-vs-LLM judge agreement was evaluated on 30 manually reviewed replies. Overall mean scores were 4.93/5 for the LLM judge and 4.83/5 for the human reviewer, with 83.3% exact agreement.
 Historical support conversations contain repetitive and noisy examples.
 Some intents overlap semantically.
 Retrieval should be evaluated with explicit exclusion of evaluation cases in a stricter benchmark.
@@ -469,8 +469,8 @@ Add confidence calibration.
 Compare TF-IDF retrieval with dense embeddings.
 Deduplicate historical cases.
 Tune escalation thresholds using labelled outcomes.
-Run a larger LLM-as-judge evaluation.
-Complete human-vs-LLM agreement testing.
+Run a larger LLM-as-judge evaluation beyond the current 30-case sample.
+Expand human-vs-LLM agreement testing beyond the current 30-case sample.
 Investigate hierarchical intent classification.
 Add monitoring for retrieval quality and unsupported claims.
 Decision Log

@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.DS_Store
+
+data/raw/
+data/processed/
+*.log
+
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+data/golden/

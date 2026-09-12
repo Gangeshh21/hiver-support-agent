@@ -110,60 +110,56 @@ hiver-support-agent/
 │
 ├── README.md
 ├── requirements.txt
-├── .env.example
 ├── .gitignore
 ├── decision_log.md
-│
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── golden/
-│
-├── notebooks/
-│   ├── 01_dataset_exploration.ipynb
-│   └── 02_error_analysis.ipynb
-│
-├── src/
-│   ├── inspect_dataset.py
-│   ├── analyze_brands.py
-│   ├── analyze_conversations.py
-│   ├── sample_conversations.py
-│   ├── pipeline.py
-│   │
-│   ├── data/
-│   │   ├── loader.py
-│   │   ├── cleaner.py
-│   │   ├── conversations.py
-│   │   ├── build_apple_threads.py
-│   │   └── build_cases.py
-│   │
-│   ├── intent/
-│   │   ├── baseline.py
-│   │   ├── classifier.py
-│   │   └── prompts.py
-│   │
-│   ├── retrieval/
-│   │   ├── index.py
-│   │   └── retriever.py
-│   │
-│   ├── generation/
-│   │   └── reply_generator.py
-│   │
-│   ├── escalation/
-│   │   └── policy.py
-│   │
-│   └── evaluation/
-│       ├── metrics.py
-│       ├── judge.py
-│       ├── evaluate_intent.py
-│       └── run_reply_evaluation.py
 │
 ├── evaluation/
 │   ├── golden_set.csv
 │   └── results/
+│       └── reply_quality_results.csv
 │
-└── report/
-    └── report.md
+├── report/
+│   └── report.md
+│
+└── src/
+    ├── inspect_dataset.py
+    ├── analyze_brands.py
+    ├── analyze_conversations.py
+    ├── conversation_stats.py
+    ├── sample_conversations.py
+    ├── pipeline.py
+    │
+    ├── data/
+    │   ├── preprocess.py
+    │   ├── conversations.py
+    │   ├── build_apple_threads.py
+    │   └── build_cases.py
+    │
+    ├── intent/
+    │   └── baseline.py
+    │
+    ├── retrieval/
+    │   ├── index.py
+    │   └── retriever.py
+    │
+    ├── generation/
+    │   └── reply_generator.py
+    │
+    ├── escalation/
+    │   └── policy.py
+    │
+    └── evaluation/
+        ├── ai_suggest_intents.py
+        ├── build_golden_candidates.py
+        ├── evaluate_intent.py
+        ├── fast_review_golden.py
+        ├── judge.py
+        ├── label_intents.py
+        ├── reply_eval_cases.csv
+        ├── review_golden_candidates.py
+        ├── review_intents.py
+        ├── run_reply_evaluation.py
+        └── suggest_golden_labels.py
 Setup
 1. Clone the repository
 git clone <YOUR_REPOSITORY_URL>
